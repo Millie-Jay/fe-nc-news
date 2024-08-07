@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./HomeComponents/Home";
-import ArticleList from "./HomeComponents/ArticleList";
 import ArticlePage from "./ArticlePage";
 import "./App.css";
 
