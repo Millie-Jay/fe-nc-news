@@ -1,15 +1,16 @@
 import React from "react";
-import ArticleList from "./HomeComponents/ArticleList";
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./HomeComponents/Home";
+import ArticleList from "./HomeComponents/ArticleList";
+import ArticlePage from "./ArticlePage";
+import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0);
   return (
     <section>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/articles/:article_id" element={<ArticlePage />} />
       </Routes>
     </section>
   );
