@@ -16,6 +16,14 @@
   overflow: hidden;
 }
 
+/* Ensure images are not too long on mobile */
+.article-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Adjust this value as needed */
+  object-fit: cover; /* Ensure images cover the area without stretching */
+}
+
 /* Mobile styles */
 @media (max-width: 767px) {
   .article-grid {
