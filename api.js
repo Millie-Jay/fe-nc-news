@@ -4,7 +4,6 @@ const api = axios.create({
   baseURL: "https://bc-nc-news-iv0p.onrender.com/api",
 });
 
-// Existing functions
 const getArticles = () => {
   return api.get("/articles").then(({ data }) => {
     return data.articles;
@@ -18,12 +17,12 @@ const getTopics = () => {
 };
 
 const getArticleById = (article_id) => {
-  return api.get(`/articles/${article_id}`).then(({ data }) => {
+  return api.get(`/articles/${article_id}/`).then(({ data }) => {
     return data.article;
   });
 };
 
-const getCommentsById = (article_id) => {
+const getCommentsByArticleId = (article_id) => {
   return api.get(`/articles/${article_id}/comments`).then(({ data }) => {
     return data.comments;
   });
@@ -45,20 +44,11 @@ const voteOnComment = (comment_id, vote) => {
     });
 };
 
-const voteOnArticle = (article_id, vote) => {
-  return api
-    .patch(`/articles/${article_id}`, { inc_votes: vote })
-    .then(({ data }) => {
-      return data.article;
-    });
-};
-
 export {
   getArticles,
   getTopics,
   getArticleById,
-  getCommentsById,
+  getCommentsByArticleId,
   postComment,
   voteOnComment,
-  voteOnArticle,
 };
